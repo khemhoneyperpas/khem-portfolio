@@ -26,3 +26,13 @@ Open `index.html` in your browser, or use the Live Server extension in VS Code.
 6. Wait for deployment, then use the website URL shown in the Pages settings.
 
 GitHub Pages publishes static HTML, CSS, and JavaScript files. The website will be public, so do not include private information.
+
+
+## Add your images
+The `assets/` folder contains replaceable SVG placeholders. To add your own pictures, copy the image into `assets/` and update the matching `src` or `data-certificate` path in `index.html`.
+
+- Profile: replace `assets/profile-placeholder.svg` with your photo (for example, `assets/khem-profile.jpg`) and update the profile image `src`.
+- Projects: add screenshots such as `assets/library-system.png`, then update each `.project-photo` image `src`. You can use a different image path for each project card.
+- Certificates: add certificate images such as `assets/certificate-java.jpg`, then update both the `src` and `data-certificate` values on each `.certificate-preview` button to the same file path. Update the certificate title, issuer, and year in the card. Clicking the card opens a larger preview.
+
+Keep filenames simple (lowercase, no spaces) and upload the `assets` folder together with the HTML, CSS, and JS files when publishing.

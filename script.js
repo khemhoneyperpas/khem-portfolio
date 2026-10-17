@@ -37,3 +37,25 @@ if ('IntersectionObserver' in window) {
 
 // Keep the footer year current.
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+
+// Accessible certificate preview modal.
+const certificateModal = document.querySelector('.certificate-modal');
+const modalImage = document.querySelector('.modal-image');
+const modalCaption = document.querySelector('.modal-caption');
+const modalClose = document.querySelector('.modal-close');
+
+document.querySelectorAll('.certificate-preview').forEach((button) => {
+  button.addEventListener('click', () => {
+    modalImage.src = button.dataset.certificate;
+    modalCaption.textContent = button.dataset.title || 'Certificate preview';
+    if (typeof certificateModal.showModal === 'function') {
+      certificateModal.showModal();
+    }
+  });
+});
+
+modalClose.addEventListener('click', () => certificateModal.close());
+certificateModal.addEventListener('click', (event) => {
+  if (event.target === certificateModal) certificateModal.close();
+});
